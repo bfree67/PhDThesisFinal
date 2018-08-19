@@ -295,12 +295,14 @@
 % joint (e.g. UCSD/SDSU) degrees.
 
 % Set the font that will be used in the front matter headings
-\def\fmfont{\fontsize\@xiipt{14.5}\selectfont}
-\def\fmsmallfont{\fontsize\@xiipt{14pt}\selectfont}
+\def\fmfont{\fontsize\@xiipt{14.5}\selectfont}   %14.5
+\def\fmsmallfont{\fontsize\@xiipt{14pt}\selectfont} %14pt
 
+%%%%%%%%%%%%%%%%%% Make changes to title page here %%%%%%%%%%
 \def\maketitle{
 {\ssp
   \begin{alwayssingle}
+  %%%%% change text size
     \let\footnotesize\small
     \let\footnoterule\relax
     \thispagestyle{empty}
@@ -309,14 +311,14 @@
   \begin{center}
   \fmfont
   {\dsp
-     {\bfseries {\expandafter{\@title}}} \par
+     {\bfseries\Large {\expandafter{\@title}}} \par %change size of title font
   }
-\bigskip\bigskip\bigskip\bigskip\bigskip\bigskip
+\bigskip\bigskip\bigskip%\bigskip\bigskip\bigskip
   {\dsp
     by \par
-    {\expandafter{\@author}} \par
+    {\large\expandafter{\@author}} \par
   }
-\bigskip\bigskip\bigskip\bigskip\bigskip\bigskip\bigskip
+\bigskip\bigskip\bigskip\bigskip\bigskip \bigskip\bigskip
   {\dsp
     \bfseries{A Thesis \par \vspace{-5mm}
     Presented to \par\vspace{-5mm}
@@ -329,7 +331,7 @@
     {\@degree} \par \vspace{-5mm}
     {In Engineering} \par
   }}
-\bigskip\bigskip%\bigskip
+\bigskip\bigskip\bigskip\bigskip\bigskip \bigskip\bigskip
   {\dsp
   \bfseries{
    Guelph, Ontario, Canada \par 
