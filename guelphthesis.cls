@@ -1,6 +1,11 @@
 % UCTHESIS DOCUMENT CLASS -- Release info is below.
 %    for LaTeX version 2e - 11/3/94
 % BUTCHERED TO BE USED AT MUN
+%
+% Further  abused for use at the University of Guelph by Brian Freeman
+% Aug 2018
+% Mostly harmless
+%
 
 %%% ====================================================================
 %%%  @LaTeX-class-file{
