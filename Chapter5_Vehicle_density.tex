@@ -86,7 +86,7 @@ with $\delta_{s}$ is the stationary stacking headway at stops and intersection f
 \label{fig1:roadspace}
 \end{figure}
 %
-The total vehicle space, $x_{s}$, used by a 5 m long SUV will vary as shown in Figure \ref{fig3:SUVspace} if $\delta_{s}$ is assumed to be a triangle distribution ranging from 0.5 m to 4 m. For unknown distributions, assuming a triangle distibution provides more conservative results \citep{Freeman2018}. If  the mean of $\delta_{s}$ = 2.2 m , the most likely total vehicle space, $x_{s}$,  is  7.09 m.
+The total vehicle space, $x_{s}$, used by a 5 m long SUV will vary as shown in Figure \ref{fig3:SUVspace} if $\delta_{s}$ is assumed to be a triangle distribution ranging from 0.5 m to 4 m. For unknown distributions, assuming a triangle distribution provides more conservative results \citep{Freeman2018}. If  the mean of $\delta_{s}$ = 2.2 m , the most likely total vehicle space, $x_{s}$,  is  7.09 m.
 %
 \begin{figure}[H]
 \centering
@@ -604,7 +604,7 @@ Table \ref{tb4:expectedvehicles} summarizes the expected number for vehicles by 
 \textbf{Vehicle class} & \textbf{Expected number of vehicles } \\ \midrule
 Total & \# of Vehicles = $Integer(-6.2(s) + 165.6)$ \\
 Sedans & \# of Sedans = $Integer (-2.82(s) + 75.2)$ \\
-SUV's & \# of SUVs = $Integer (-3.04(s) + 81)$ \\
+SUVs & \# of SUVs = $Integer (-3.04(s) + 81)$ \\
 Bus, medium & \ 1 \\
 Bus, large & \# of large buses = $Integer (-0.3(s) + 8.2)$ \\ \bottomrule
 \end{tabular}
@@ -612,7 +612,7 @@ Bus, large & \# of large buses = $Integer (-0.3(s) + 8.2)$ \\ \bottomrule
 %
 The results in Table \ref{tb4:expectedvehicles} are representative only of that section of road with the fleet composition in Table \ref{tab:pooledfleet}.  Different traffic profiles will have different densities and results.  Other factors that could affect the traffic profiles include location of road section, type of road, season, time of day, weather conditions and construction activities. 
  
-\section{Conclusions and recommendations}
+\section{Conclusions}
 Traffic density characterization is a fundamental input to mobile source emission inventory estimation and traffic planning. Establishing fleet composition is commonly completed by traffic counts and can be done relatively easily using stationary cameras or human observers. Capturing vehicle spacing is more complex when using a stationary camera without surface references. Our method, using a UAS and photogrammetry software to create a 3D model of a signalized interchange, allowed easy fleet composition evaluation as well as measuring $\delta_{s}$. By evaluating different intersections during different high volume traffic periods, we were able to establish that both fleet composition and $\delta_{s}$ distributions did not vary significantly and could be pooled to form a larger sample set. The pooled $\delta_{s}$ dataset required logarithmic transformation to achieve normality and meet statistical testing requirements (p$<$0.05). This research is one of the first to address the expected stacking gaps between vehicle at SIs.
 
 Our initial results show that traffic density at intersections, and by assumption congested traffic, moving at 5 km/h or less, stacks using a log-normal distribution with a mean of 2.17 m and a variance of 1 m. The $\delta_{s}$ did not depend on vehicle type, location or time of day, although significant differences were noticed for cars in the first lane and SUVs in the third lane. Large buses and HGVs had the shortest $\delta_{s}$, possibly due to driver positions near the vehicle's front bumper. Additional missions will be conducted at the sampling points to characterize traffic composition during different times of the day better.
@@ -621,3 +621,10 @@ Using the spacing model developed for idling traffic at SIs, spacing was linearl
 
 Measuring vehicles spacing for moving traffic and other traffic control scenarios such as 4-way stops and round-abouts, requires different methodologies that were not included in this research.
 With moving traffic, the UAS becomes a static camera for instantaneous shots, similar to traditional traffic cameras, but with more flexibility with regards to location and altitude. Ground control markers and reference points are required to measure distances relative to the drone and the target vehicles. Additionally, machine learning will be incorporated into the methodology by automatically identify vehicle classes and $\delta_{s}$ lengths. These methods will be developed in future work.
+
+%---------------------------------------------------------------
+%------------------------End of Chapter----------------------
+\bigskip
+\begin{center}
+END OF CHAPTER
+\end{center}
