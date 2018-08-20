@@ -16,23 +16,23 @@ E_{SI}=\sum_{i=1}^{n}(Q_{0})_{i}t_{0} + (Q_{a})_{i}t_{a}
 \noindent
 where $n$ is the number of vehicles in the SI queue, $Q_{0}$ is the idling emission rate for individual vehicles in the queue at $t_{0}$.  $Q_{a}$ is the individual emission rate to accelerate up to the posted limited  and $t_{a}$ is the  acceleration time.
 
-\subsubsection{Vehicle emission models} \label{sssec:VehEmissionModels}
+\subsection{Vehicle emission models} \label{sssec:VehEmissionModels}
 
 One of the most widely used models in North America is the MOtor Vehicle Emission Simulator (MOVES) from the USEPA \citep{MOVES2014a}. This model uses vehicle type, road conditions, operating activities, and geography to estimate the amount of pollution generated in a section of road. MOVES is primarily intended for mobile sources in North America. It is a complicated and data-intensive model that is difficult to apply to large, regional models \citep{Zhang2011}.
 
 Another model is the International Vehicle Emissions (IVE) model developed by a consortium funded by the USEPA to provide a model for vehicle emissions outside of North America \citep{IVE2008}. It includes over 700 different types of vehicles, including 72 different classes of light-duty gasoline vehicles (LDGTs) with three different cylinder volume subsectors. Vehicle models are further categorized by technology classes based on vehicle exhaust controls and European standards \citep{Davis2005}. The IVE model allows for customized local traffic conditions, driving patterns, fuel quality, and vehicle types for countries outside North America \citep{Davis2010}. Results from the IVE, however, vary with underestimation of some emissions by 50\% and over-estimation of others by 350\% \citep{Hui2007}.
 
-\subsubsection{Classical traffic estimation} \label{sssec:ClassicalTraffic}
+\subsection{Classical traffic estimation} \label{sssec:ClassicalTraffic}
 
 Quantifying vehicle emissions requires, as a minimum, estimations of the number of vehicles on the road networks and the type of vehicle. In addition to these input parameters, each model uses a combination of composite mobile emissions based on average speeds, hot/cold starts, ambient temperature, prediction year and modal factors to calculate emissions \citep{Franco2013}. While the models assume constant speeds, actual driving conditions are more variable, especially in congested traffic \citep{Freeman2015b}. Vehicle emissions vary with speed with more emissions generated at higher speeds. Congestion and traffic jams, however, are the fastest growing segment of mobile source emissions, with emission rates of pollutants at slow and stop/go speeds similar to emissions at high speeds due to continuous acceleration/deceleration cycles \citep{Barth2009}. At SIs, vehicles are assumed to be stationary, although small creeping often occurs.
 
-\subsubsection{Modern traffic estimation}
+\subsection{Modern traffic estimation}
 
 In many major urban centers, main roads are monitored by ITS's that track average velocity, $v$, traffic flow, $f$, and traffic density, $\rho$ \citep{Wu2007, Abtahi2011, Bartosz2015}.
 
 In addition to ITS's, different numerical models have been used to estimate vehicle density including classical statistical models \citep{Schreckenberg1995}, Kalman Filters \citep{Pourmoallem1997, Sun2004} and neural networks \citep{Ghosh-Dastidar2006}.  These models looked at how traffic flowed over time to assess traffic management strategies and required complex computations and historical data to calibrate the necessary equations for a specific stretch of road.  Monte Carlo methods have also been used to validate results of traffic flow models \citep{Mihaylova2004} but not to generate results.  These models look at traffic flow under various conditions and not at the extreme scenarios of congested traffic or SIs. 
 
-\subsubsection{Unmanned Aerial Systems for traffic management} 
+\subsection{Unmanned Aerial Systems for traffic management} 
 Unmanned aerial systems (UAS's), or drones, have become widely used for non-military applications such as cartography \citep{Saadatseresht2015}, agricultural surveillance \citep{Saari2017}, environmental monitoring \citep{Capolupo2015, Rees2018}, utility inspection \citep{Day2017, Gomez2017} and traffic management \citep{Ke2018, Ahmadi2017,  Salvo2017, Liu2013}.  Typical drone operations have three main components:
 
 \begin{enumerate}
