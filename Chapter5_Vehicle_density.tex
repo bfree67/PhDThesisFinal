@@ -67,7 +67,7 @@ Angel et al. (2002) were some of the first researchers to use a drone to capture
 
 A method currently available to evaluate SI stacking is to use Structure from Motion (SfM) methods in photogrammetry. SfM uses digital elevation models (DEMs) created from point clouds within the photogrammetric model. DEMs are generated from multiple images of the same area at different angles using multi-view stereo (MVS) algorithms \citep{James2017}. Images taken by the drone have geolocation and time stamps embedded in the jpeg file that is orthorectified based on the camera parameters and stitched together to form an orthomosaic image \citep{Westoby2012}. Once the DEM is processed, take-offs and measurements can be made using a 3D model of the scene. Vehicles should be stationary during the image capture phase. In this research, we evaluated the stacking distances at signalized intersections using a novel method that employs a drone to capture static imagery at different angles and locations that are then processed using commercially available software. We specifically focused on signalized intersections as they provide a random sample set of the on-road fleet distribution in a stationary position that allows the drone to capture the necessary images for the DEM. 
 
-\section{Theoretical Background}
+\section{Methodology}
 
 Using Ahmadi's notations \citep{Ahmadi2017}, the amount of vehicles on a unit road length depends on the length of the vehicle, $l$ in meters and the stacking gap a driver keeps from the car in front, $\delta_{s}$.  The recommended moving $\delta_{s}$ gap is based on spacing, $\Delta_{t}$, of 2 seconds behind the lead vehicle, relative to the vehicle's speed, $s$ \citep{NYDMV2015, ukdot2017}.  For vehicles stacking at an SI and $s=0$, the spacing is assumed to be based on the individual driver's behavior with only informal guidance available, such as leaving space for a pedestrian or able to see the tires of the front car. Results from studies show that closing the stacking gap, $\delta_{s}$, makes no difference in regards to improving vehicle flow rate but does increase risks for rear-end collisions, thereby blocking the lane and indirectly reducing overall flow \citep{Ahmadi2017}. The total road space for a vehicle stacking at an intersection, $x_{s}$, is given as
 
@@ -117,7 +117,7 @@ The total number of vehicles, $n$, on stacked at a 1 km of road segment can be e
 
 The algorithm uses one discreet random variable ($Class$) that represents $k$ number of vehicle classes and can easily count individual vehicle classes by adding additional variable counters in the while loop. The algorithm also uses two continuous random variables, $Length(VehicleClass_{i})$ representing the length of an individual vehicle based on its class and $Gap$ representing the $\delta_{s}$ gap between vehicles.  A vehicle's length may average from 1.8 m for a sedan to 12 m for a heavy goods vehicles (HGVs) with a trailer. The $\delta_{s}$ gap is assumed to vary with each driver and independent of the vehicle type. This research is one of the first aiming to model the stacking gap, $\delta_{s}$, between vehicles at SIs.
 
-\subsubsection{Estimating fleet composition.}
+\subsection{Estimating fleet composition.}
 
 The algorithm presented earlier was implemented by first estimating the expected fleet composition on the local roads. Specific road use is important when estimating the types of vehicles in a sample population of vehicles.  The distribution of vehicle types in a residential area is assumed to be different than in an industrial area or highway. More lorries and HGVs would be expected to be seen during early morning hours as compared to SUVs and sedans during rush hours. Vehicle classes were selected to represent existing traffic based on observations in Kuwait, as shown in Table \ref{tb1:vehicletypes}. The frequency shown is from total registered vehicles in Kuwait in 2014 provided by the Ministry of Interior. Pick-ups, minivans, and vans were grouped with SUVs. HGVs were grouped with large buses. The number and type of vehicles can be expanded to provide better classification, such as make, model, engine size, weight, fuel types, and age.
 
@@ -164,7 +164,7 @@ Vehicle 8 & 1 & Sedan & 4.9 & 1 & 0 & 0 & 0 \\ \bottomrule
 } %end resizebox
 \end{table}
 
-\section{Methodology}
+\subsection{Preparing the Digital Elevation Model}
 
 In order to measure actual $\delta_{s}$ at intersections and quantify fleet compositions operating at specific locations and times, imagery acquired by a UAS was converted into a DEM and 3D model. A commercial, multi-rotor UAS (DJI Phantom 3 Professional) was used to acquire the imagery as shown in Figure \ref{fig:p3p}. The performance specifications for the UAS are shown in Table \ref{tb:p3p-specs}.
 
@@ -211,6 +211,7 @@ The collected imagery was processed using Pix4Dmapper Pro ver 4.0.25 (\url{https
 \end{figure}
 %
 
+\subsection{Measuring gap distances}
 Distances between vehicle were extracted by measuring polylines between vehicles as shown in Figure \ref{fig:pix4Dgaps}.
 %
 \begin{figure}[H]

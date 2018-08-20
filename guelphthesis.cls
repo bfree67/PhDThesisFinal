@@ -6,6 +6,9 @@
 % Aug 2018
 % Mostly harmless
 %
+%%%% to update titlepage format find: maketitle in this file
+%
+%
 
 %%% ====================================================================
 %%%  @LaTeX-class-file{
@@ -341,7 +344,7 @@
   \bfseries{
    Guelph, Ontario, Canada \par 
   %{\copyright\;{\@author}, July,\;{\@degreeyear}}
-   {\copyright\;{\@author}, \;{\@degreeyear}}  %%%% add month if needed, by using commented out lien
+   {\copyright\;{\@author}, August,\;{\@degreeyear}}  %%%% add month if needed, by using commented out format
    }}
 \end{center}
 \vspace{6ex}
@@ -437,7 +440,7 @@ by\par
 \thispagestyle{plain}
 \begin{center}
 \fmfont
-{\large \bfseries \abstractname \par}
+{\large \abstractname \par}  %% removed \bfseries (BF)
 %\bfseries \abstractname \par
 \end{center} 
 %\addcontentsline{toc}{chapter}{Abstract}
