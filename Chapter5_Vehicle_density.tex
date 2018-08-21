@@ -32,7 +32,7 @@ In many major urban centers, main roads are monitored by ITS's that track averag
 
 In addition to ITS's, different numerical models have been used to estimate vehicle density including classical statistical models \citep{Schreckenberg1995}, Kalman Filters \citep{Pourmoallem1997, Sun2004} and neural networks \citep{Ghosh-Dastidar2006}.  These models looked at how traffic flowed over time to assess traffic management strategies and required complex computations and historical data to calibrate the necessary equations for a specific stretch of road.  Monte Carlo methods have also been used to validate results of traffic flow models \citep{Mihaylova2004} but not to generate results.  These models look at traffic flow under various conditions and not at the extreme scenarios of congested traffic or SIs. 
 
-\subsection{Unmanned Aerial Systems for traffic management} 
+\subsection{Unmanned aerial systems for traffic management} 
 Unmanned aerial systems (UAS's), or drones, have become widely used for non-military applications such as cartography \citep{Saadatseresht2015}, agricultural surveillance \citep{Saari2017}, environmental monitoring \citep{Capolupo2015, Rees2018}, utility inspection \citep{Day2017, Gomez2017} and traffic management \citep{Ke2018, Ahmadi2017,  Salvo2017, Liu2013}.  Typical drone operations have three main components:
 
 \begin{enumerate}
@@ -86,7 +86,7 @@ with $\delta_{s}$ is the stationary stacking headway at stops and intersection f
 \label{fig1:roadspace}
 \end{figure}
 %
-The total vehicle space, $x_{s}$, used by a 5 m long SUV will vary as shown in Figure \ref{fig3:SUVspace} if $\delta_{s}$ is assumed to be a triangle distribution ranging from 0.5 m to 4 m. For unknown distributions, assuming a triangle distribution provides more conservative results \citep{Freeman2018}. If  the mean of $\delta_{s}$ = 2.2 m , the most likely total vehicle space, $x_{s}$,  is  7.09 m.
+The total vehicle space, $x_{s}$, used by a 5 m long SUV will vary as shown in Figure \ref{fig3:SUVspace} if $\delta_{s}$ is assumed to be a Triangle distribution ranging from 0.5 m to 4 m. For unknown distributions, assuming a Triangle distribution provides more conservative results \citep{Freeman2018}. If  the mean of $\delta_{s}$ = 2.2 m , the most likely total vehicle space, $x_{s}$,  is  7.09 m.
 %
 \begin{figure}[H]
 \centering
@@ -138,7 +138,7 @@ The algorithm presented earlier was implemented by first estimating the expected
 } %end resize
 \end{table}
 
-Once the frequency of vehicles types within the local fleet is determined, a Monte Carlo Analysis (MCA) can be used to estimate the most likely range of vehicle types and numbers on a road segment \citep{Freeman2015b}. Vehicle spaces in the road segment were assigned based on a maximum number of 217 vehicles possible on a 1 km road segment at an SI.  This maximum value assumes that only sedans are on the road with a vehicle length of 1.8 m and a $\delta_{s}$ = 2.8 m.  During modeling, however, the most vehicles in the same stretch of road never exceeded 170.  Reasonable $\delta_{s}$ values were initially assumed to range from 0.7 m to 5.6 m. An initial distribution of $\delta_{s}$ was assumed to be a continuous triangle distribution. Each vehicle length was assigned a Pert distribution based on its class and manufacturer data. Distribution selection is important for MCA as some distributions under-estimate for the given variable. Pert and triangle distributions provide conservative estimates when the underlying distributions are not known \citep{Freeman2018}. 
+Once the frequency of vehicles types within the local fleet is determined, a Monte Carlo Analysis (MCA) can be used to estimate the most likely range of vehicle types and numbers on a road segment \citep{Freeman2015b}. Vehicle spaces in the road segment were assigned based on a maximum number of 217 vehicles possible on a 1 km road segment at an SI.  This maximum value assumes that only sedans are on the road with a vehicle length of 1.8 m and a $\delta_{s}$ = 2.8 m.  During modeling, however, the most vehicles in the same stretch of road never exceeded 170.  Reasonable $\delta_{s}$ values were initially assumed to range from 0.7 m to 5.6 m. An initial distribution of $\delta_{s}$ was assumed to be a continuous Triangle distribution. Each vehicle length was assigned a Pert distribution based on its class and manufacturer data. Distribution selection is important for MCA as some distributions under-estimate for the given variable. Pert and Triangle distributions provide conservative estimates when the underlying distributions are not known \citep{Freeman2018}. 
 
 If no data was available, length variation was assumed to be $\pm5\%$ of the default length. A vehicle class was randomly selected from the different classes of Table \ref{tb1:vehicletypes} for each space.  The vehicle length was then selected from the assigned distribution based on the vehicle class.  The $\delta_{s}$ was added to the vehicle length by randomly selecting a time spacing and multiplying it by the average speed, $s$. In the case of speeds less than 5 km/h and at rest, $s$ = 5 km/h was used.  
 
@@ -164,7 +164,7 @@ Vehicle 8 & 1 & Sedan & 4.9 & 1 & 0 & 0 & 0 \\ \bottomrule
 } %end resizebox
 \end{table}
 
-\subsection{Preparing the Digital Elevation Model}
+\subsection{Preparing the digital elevation model}
 
 In order to measure actual $\delta_{s}$ at intersections and quantify fleet compositions operating at specific locations and times, imagery acquired by a UAS was converted into a DEM and 3D model. A commercial, multi-rotor UAS (DJI Phantom 3 Professional) was used to acquire the imagery as shown in Figure \ref{fig:p3p}. The performance specifications for the UAS are shown in Table \ref{tb:p3p-specs}.
 
@@ -280,7 +280,7 @@ Data was collected at the westbound intersection on the 7th Ring and 40 Highway 
 \label{fig:flights}
 \end{figure}
 
-Data collection began after traffic had stacked, usually 20-30 seconds into the red light period, and lasted for about 45 seconds. The UAS flew on the inside shoulder to prevent direct overflight of vehicles. Data collection consisted of two passes: the first pass collected images perpendicular to traffic, and the 2nd collected images at a 45 degree offset to the traffic to provide necessary angles for late processing as shown in Figure \ref{fig:mission}.
+Data collection began after traffic had stacked, usually 20-30 seconds into the red light period, and lasted for about 45 seconds. The UAS flew on the inside shoulder to prevent direct overflight of vehicles. Data collection consisted of two passes: the first pass collected images perpendicular to traffic, and the 2nd collected images at a 45 degree offset to the traffic to provide necessary angles for processing as shown in Figure \ref{fig:mission}.
 
 \begin{figure}[H]
 \centering
@@ -521,7 +521,7 @@ The logarithmic data is transformed back to real space using the equation
 X = 10^{N(\mu,\sigma)}
 \end{equation}
 
-The equation was sampled with an MCA using 5,000 iterations resulting in a fitted distribution that is lognormal with a mean of 2.17 m and standard deviation of 1.0 m as shown in Figure \ref{fig:lognormal}.  The figure also overlays the LogLogistic curve fitted to the measured data in Figure \ref{fig:pooledflt} as a comparison.
+The equation was sampled with an MCA using 5,000 iterations resulting in a fitted distribution that is Lognormal with a mean of 2.17 m and standard deviation of 1.0 m as shown in Figure \ref{fig:lognormal}.  The figure also overlays the LogLogistic curve fitted to the measured data in Figure \ref{fig:pooledflt} as a comparison.
  
 \begin{figure}[H]
 \centering
@@ -533,7 +533,7 @@ The equation was sampled with an MCA using 5,000 iterations resulting in a fitte
 The Mean Absolute Error (MAE) between the MCA generated data (LogNormal curve) and calculated results (LogLogistics curve) is 0.0126 m, compared to the 0.041 m MAE measurement error in Table \ref{tab:uascalibrate}. The composite error is $\pm 0.054$m.
 
 \subsection{Monte Carlo Analysis using field data}
-A vehicle density model was prepared for MCA using the fleet composition and $\delta_{s}$ model parameters developed from the pooled data collected from the UAS flights. @RISK Version 7.5 Industrial Edition (\url{www.palisade.com}) was used to provide the MCA using a Latin Hypercube sample generator.  A total of 5,000 iterations were run at 5, 10, 15, and 20 km/h. It was assumed that fleet composition at different speeds did not vary within the observed road segment. The $\delta_{s}$ calculated based on the parameters of Table \ref{tab:gapnormal} were assumed for speeds $\leq$ 5 km/h. For speeds $>$ 5 km/h, the lognormal distribution was kept, and parameters were linearly extrapolated by multiplying the mean by a factor of the speed relative to 5 km/h.  
+A vehicle density model was prepared for MCA using the fleet composition and $\delta_{s}$ model parameters developed from the pooled data collected from the UAS flights. @RISK Version 7.5 Industrial Edition (\url{www.palisade.com}) was used to provide the MCA using a Latin Hypercube sample generator.  A total of 5,000 iterations were run at 5, 10, 15, and 20 km/h. It was assumed that fleet composition at different speeds did not vary within the observed road segment. The $\delta_{s}$ calculated based on the parameters of Table \ref{tab:gapnormal} were assumed for speeds $\leq$ 5 km/h. For speeds $>$ 5 km/h, the Lognormal distribution was kept, and parameters were linearly extrapolated by multiplying the mean by a factor of the speed relative to 5 km/h.  
 
 The model captures the total number and class of vehicles in one kilometer of road.  Lane changing was not considered. The average (mean) of the total vehicles in one road lane over a 1 km segment at different speeds are summarized in Table \ref{tab:meanvehdensity}.
 
@@ -616,7 +616,7 @@ The results in Table \ref{tb4:expectedvehicles} are representative only of that 
 \section{Conclusions}
 Traffic density characterization is a fundamental input to mobile source emission inventory estimation and traffic planning. Establishing fleet composition is commonly completed by traffic counts and can be done relatively easily using stationary cameras or human observers. Capturing vehicle spacing is more complex when using a stationary camera without surface references. Our method, using a UAS and photogrammetry software to create a 3D model of a signalized interchange, allowed easy fleet composition evaluation as well as measuring $\delta_{s}$. By evaluating different intersections during different high volume traffic periods, we were able to establish that both fleet composition and $\delta_{s}$ distributions did not vary significantly and could be pooled to form a larger sample set. The pooled $\delta_{s}$ dataset required logarithmic transformation to achieve normality and meet statistical testing requirements (p$<$0.05). This research is one of the first to address the expected stacking gaps between vehicle at SIs.
 
-Our initial results show that traffic density at intersections, and by assumption congested traffic, moving at 5 km/h or less, stacks using a log-normal distribution with a mean of 2.17 m and a variance of 1 m. The $\delta_{s}$ did not depend on vehicle type, location or time of day, although significant differences were noticed for cars in the first lane and SUVs in the third lane. Large buses and HGVs had the shortest $\delta_{s}$, possibly due to driver positions near the vehicle's front bumper. Additional missions will be conducted at the sampling points to characterize traffic composition during different times of the day better.
+Our initial results show that traffic density at intersections, and by assumption congested traffic, moving at 5 km/h or less, stacks using a Lognormal distribution with a mean of 2.17 m and a variance of 1 m. The $\delta_{s}$ did not depend on vehicle type, location or time of day, although significant differences were noticed for cars in the first lane and SUVs in the third lane. Large buses and HGVs had the shortest $\delta_{s}$, possibly due to driver positions near the vehicle's front bumper. Additional missions will be conducted at the sampling points to characterize traffic composition during different times of the day better.
 
 Using the spacing model developed for idling traffic at SIs, spacing was linearly increased for different speeds to create spacing distributions for an MCA model. The model randomly determined individual vehicles based on the fleet composition and spacing based on the design speed and spacing model. The model then aggregated the filled road spaces for a 1 km road segment. The generated MCA results correlated well with the observed data when pooled.
 

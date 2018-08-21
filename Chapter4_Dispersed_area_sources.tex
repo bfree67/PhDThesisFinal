@@ -33,10 +33,10 @@ To determine the annual emissions, both GHGs and HAPs for $nargyla$ pipes, three
 \begin{itemize}
     \item The amount and type of emissions generated from the charcoal per mass consumed
     \item The amount and type of emissions from the singed $sheesha$ generated per mass consumed
-    \item The estimated annual raw consumption of $sheesha$ tobacco and charcoal by commercial caf\'es and restaurants 
+    \item The estimated annual raw consumption of $sheesha$ tobacco and charcoal by commercial caf\'es and restaurants that serve $nargyla$. 
 \end{itemize}
 \noindent
-that serve $nargyla$. 
+
 
 To estimate emission types and rates for $sheesha$ and charcoal combustion, values from the related published research were used \citep{Akagi2011, Bhattacharya2002, Paciornik2006, Sepetdjian2010, USEPA1995}.  Smoking session parameters, such as sitting durations and puff lengths, were also taken from published works \citep{Eissenberg2009, Fromme2009, Mulla2015}.  Estimating the amount of $sheesha$ and charcoal used per year in each caf\'e and restaurant was based on interviews with managers, with the estimated quantities assumed for all venues. Using this approach, we can apply the Central Limit Theorem (CLT) and assume a Normal distribution for analysis.  
 
@@ -129,7 +129,7 @@ AC = AC_{charcoal} + ( \lambda * AC_{sheesha} )
 \noindent
 where $AC_{charcoal}$ is the total mass of charcoal consumed during combustion and $AC_{sheesha}$ is the total mass of $sheesha$ consumed during combustion.  Because the $sheesha$ is not fully burned during the smoking process, only a fraction of the total amount is assumed to contribute to the total generated emissions.  A scaling term, lambda, $\lambda$, is introduced to account for this fractional portion. 
 
-Annual consumption of charcoal and $sheesha$ was estimated by sampling individual restaurants and caf\'es that serve $nargyla$ pipes to clients.  Our work requested from managers to determine how much charcoal and tobacco were used daily, weekly, or monthly.  Response ranged from 15-35 kg of charcoal per day (100-140 kg/week) and 1-10 kg of $sheesha$ tobacco (all flavors) per day (7-70 kg/week).  Because the number of smokers at each caf\'e can be assumed to be randomly and independently drawn from their underlying PDFs, the CLT can be used to simplify the calculation process resulting in Normal distributions that represent the sum of all charcoal and $sheesha$ used on any given day.  The normal distribution has mean ($\mu$) and standard deviation ($\sigma$) input parameters defined as
+Annual consumption of charcoal and $sheesha$ was estimated by sampling individual restaurants and caf\'es that serve $nargyla$ pipes to clients.  Our work requested from managers to determine how much charcoal and tobacco were used daily, weekly, or monthly.  Response ranged from 15-35 kg of charcoal per day (100-140 kg/week) and 1-10 kg of $sheesha$ tobacco (all flavors) per day (7-70 kg/week).  Because the number of smokers at each caf\'e can be assumed to be randomly and independently drawn from their underlying PDFs, the CLT can be used to simplify the calculation process resulting in Normal distributions that represent the sum of all charcoal and $sheesha$ used on any given day.  The Normal distribution has mean ($\mu$) and standard deviation ($\sigma$) input parameters defined as
 %
 \begin{equation}
 \label{eq3}
@@ -182,7 +182,7 @@ $sheesha$ & 7 & 70 & 38.5 & 31.5 & 172,172 & 15,190 \\ \bottomrule
 \end{table}
 %
 
-A $\lambda = 0.2$ was assumed to account for the $sheesha$ tobacco burned during the smoking process based on study evaluations.  Lambda was held constant for this paper but could vary based on smoking habits and pipe preparation.  The annual total material consumed (AC) mean ($\mu$) and standard deviation ($\sigma$) for charcoal and $sheesha$ were calculated using MCA.  The variables in Equation \ref{eq2} were replaced with Normal distributions, $N(\mu,\sigma)$,  using the means and standard deviations of the total annual consumptions from Table \ref{tb3:feedstock}.  The evaluated equation            
+A $\lambda = 0.2$ was assumed to account for the $sheesha$ tobacco burned during the smoking process based on study evaluations.  Lambda was held constant for this research but could vary based on smoking habits and pipe preparation.  The annual total material consumed (AC) mean ($\mu$) and standard deviation ($\sigma$) for charcoal and $sheesha$ were calculated using MCA.  The variables in Equation \ref{eq2} were replaced with Normal distributions, $N(\mu,\sigma)$,  using the means and standard deviations of the total annual consumptions from Table \ref{tb3:feedstock}.  The evaluated equation            
 %
 \begin{equation}
 \label{eq7}
@@ -203,7 +203,7 @@ This study did not include $nargyla$ usage at home nor did it include charcoal c
 
 \section{Results}
 
-Using the general form of annual emissions in Equation \ref{eq1}, the Emissions Factor PDFs from Table \ref{tb2:emissionfactors} were converted into Triangle distributions, and the parameters for total annual combustion in Equation 5 were used to form a Normal distribution to represent the total input feedstock.  An MCA was performed for 50,000 realizations using @RISK 7.5.1 with Latin Hypercube sampling. The number of iterations was selected to ensure full coverage and is significantly more than the minimum amount needed to cover over 99\% of all possible scenarios.  If system resources and complexity required reduced iterations, methods exist to more precisely estimate the minimum number required for a desired confidence interval \citep{Bukaci2016}.
+Using the general form of annual emissions in Equation \ref{eq1}, the Emissions Factor PDFs from Table \ref{tb2:emissionfactors} were converted into Triangle distributions, and the parameters for total annual combustion in Equation 5 were used to form a Normal distribution to represent the total input feedstock.  An MCA was performed for 50,000 iterations using @RISK 7.5.1 with Latin Hypercube sampling. The number of iterations was selected to ensure full coverage and is significantly more than the minimum amount needed to cover over 99\% of all possible scenarios.  If system resources and complexity required reduced iterations, methods exist to more precisely estimate the minimum number required for a desired confidence interval \citep{Bukaci2016}.
 
 Results were divided by 106 to get units of metric tonnes, or 103 to get kilograms if the total was less than 1 tonne per year.  The average annual emissions for individual pollutants are shown in Table \ref{tb4:results} with Triangle distributions of the EFs and results shown in Figure \ref{figng3:pdfs}. 
 
@@ -237,12 +237,12 @@ Results were divided by 106 to get units of metric tonnes, or 103 to get kilogra
 \end{figure}
 %
 
-\subsection{Sensitivity Analysis or Area Source Emissions}
+\subsection{Sensitivity analysis for area source emissions}
 While the annual mass consumption could assume a Normal distribution due to the Central Limit Theorem, the EFs were arbitrarily assumed to have Triangle distributions.  To evaluate the selection of distribution, different distributions were applied to the MCA and compared to the Triangle distribution results.  Additional distributions included the Uniform, Normal, and Pert. Of the four distributions compared, all used finite range parameters based on the Min, Max, and Expected values of Table \ref{tb2:emissionfactors}.  For the Normal distribution, the mean, $\mu$, was assumed to be the average of the Min and Max, while the standard deviation, $\sigma$, assumed that the Min/Max were 3$\sigma$ from the mean and was calculated as
 %
 \begin{equation}
 \label{eq8}
-\sigma = (\mu – Min) / 3
+\sigma = (\mu - Min) / 3
 \end{equation}
 %
 The parameters used for the different EF distributions are shown in Table \ref{tb5:sensitivity}.
@@ -265,7 +265,7 @@ PAH & 0.0001 & 0.00045 & 0.0065 & 0.0033 & 0.001 \\ \bottomrule
 \end{tabular}
 \end{table}
 %
-Comparing the means of each distribution shows that changes in the average vary slightly among the different forms with most variation, represented by the sample standard deviation (s) being N$_{2}$O in Table \ref{tb6:compare}.  The Triangle and Pert distributions provide the most conservative average values assuming central tendencies apply to the distribution.
+Comparing the means of each distribution shows that changes in the average vary slightly among the different forms with most variation, represented by the sample standard deviation, S,  being N$_{2}$O in Table \ref{tb6:compare}.  The Triangle and Pert distributions provide the most conservative average values assuming central tendencies apply to the distribution.
 %
 \begin{table}[H]
 \centering
@@ -275,7 +275,7 @@ Comparing the means of each distribution shows that changes in the average vary 
 \begin{tabular}{@{}cccccccccc@{}}
 \toprule
  & \multicolumn{5}{c}{\textbf{Distributions}} & \multicolumn{4}{c}{\textbf{Statistics}} \\ \midrule
-\textbf{Units} & \textbf{Pollutant} & \textbf{Triangle} & \textbf{Uniform} & \textbf{Normal} & \textbf{Pert} & \textbf{$\bar\{x\}$} & \textbf{S} & \textbf{Lower 95\% CI} & \textbf{Upper 95\% CI} \\ \midrule
+\textbf{Units} & \textbf{Pollutant} & \textbf{Triangle} & \textbf{Uniform} & \textbf{Normal} & \textbf{Pert} &  \textbf{$\bar{x}$} & \textbf{S} & \textbf{Lower 95\% CI} & \textbf{Upper 95\% CI} \\ \midrule
 \multirow{4}{*}{\textbf{tonnes}} & CO$_{2}$ & 1352.9 & 1348.3 & 1348.3 & 1357.4 & 1351.7 & 4.37 & 1,343.2 & 1,360.3 \\
  & CO & 80.3 & 66.5 & 66.5 & 94.1 & 76.9 & 13.2 & 51.0 & 102.8 \\
  & NMOC & 5.1 & 4.9 & 4.9 & 5.4 & 5.1 & 0.3 & 4.5 & 5.6 \\
@@ -313,7 +313,7 @@ A similar review of the standard deviations of the different distributions shows
 
 While the form of the EF distribution influences annual emission distributions, the influence is not significant. Ninety-five percent (95\%) Confidence Intervals (CI) of the distribution means are shown in Tables \ref{tb6:compare}, with similar CI’s for the sample standard deviations in Table \ref{tb7:stndev}. In all case, the distribution statistics are within the bounds and therefore can accept a null hypothesis that distribution means are not significantly different and that distribution variances are not statistically significant ($p<0.05$).  Tables \ref{tb6:compare} and \ref{tb7:stndev} show that using a Triangular distribution provides a conservative value if the underlying distribution is not known and few data points are available to describe the sample population.  
 
-\subsection{Comparison of Annual Results to National Emissions Inventory}
+\subsection{Comparison of annual results to national emissions inventory}
 Applying the resulting means generated from the assigned PDFs we can compare the estimated emissions from smoking $nargyla$ to the total emissions reported by Kuwait in its first national communication under the United Nations Framework Convention on Climate Change (UNFCCC) \citep{AlMudhhi2012}.  The report baselines Kuwait’s Greenhouse Gas (GHG) emissions for 1996 baseline year.  Table \ref{tb8:comparison} shows that the estimated emissions from smoking in 2016 are significant compared to the entire reported emissions of 1996. 
 
 %
