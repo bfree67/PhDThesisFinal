@@ -2,7 +2,7 @@
 
 \section{Introduction}
 
-Tropospheric ozone (O$_{3}$) is a secondary pollutant formed by complex photo-chemical processes that impacts human health, plants, and structural materials. Over 21,000 premature deaths in Europe are attributed annually to O$_{3}$ exposure \citep{WHO2008} with over 1.1 million deaths worldwide - over 20\% of all deaths attributed to respiratory diseases \citep{Malley2017}. The majority of tropospheric O$_{3}$ is generated through anthropogenic sources \citep{Lelieveld2000, Cooper2006} attributed to the photo-disassociation of NO$_{2}$ as shown below in the simplified reaction \citep{Finlayson1993}:
+Tropospheric ozone (O$_{3}$) is a secondary pollutant formed by complex photo-chemical processes that impacts human health, plants, and structural materials. More than 21,000 premature deaths in Europe are attributed annually to O$_{3}$ exposure \citep{WHO2008} with over 1.1 million deaths worldwide and accounting for over 20\% of all deaths attributed to respiratory diseases \citep{Malley2017}. The majority of tropospheric O$_{3}$ is generated through anthropogenic sources \citep{Lelieveld2000, Cooper2006} attributed to the photo-disassociation of NO$_{2}$ as shown below in the simplified reaction \citep{Finlayson1993}:
 
 \begin{equation}
 \label{eq:ozoneformation}
@@ -98,7 +98,7 @@ Y(\tau)= corr(X(t),X(t - \tau))
 \end{equation}
 %
 \noindent
-where X is the input vector of a time step and $\tau$ is the lag (in hours). The correlogram was plotted based on lags up to 72 hours, as shown in Figure \ref{fig:serialcorr}.
+where $X$ is the input vector of a time step and $\tau$ is the lag (in hours). The correlogram was plotted based on lags up to 72 hours, as shown in Figure \ref{fig:serialcorr}.
 %
 \begin{figure}[H]
 \centering
@@ -251,7 +251,7 @@ C(ppb) = \frac{C(\mu g/m^{3})(R) (T)}{(P) (MW)}
 %
 
 \noindent
-where $C(ppb)$ is the gas concentration in $ppb$, $C(\mu g/m^{3})$ is the concentration in $\mu g/m^{3}$, $R$ is the ideal gas constant given as 8.3144 $m^{3}kPa K^{-1}mol^{-1}$, MW is the molecular weight of the gas in $g/mole$ (48.01 $g/mole$ for O$_{3}$), $T$ is the ambient temperature in degrees Kelvin, and $P$ is the atmospheric pressure at ground level in $kPa$. The station receives a prevailing wind from the northwest throughout the year as shown in the windrose in Figure \ref{fig:windrose} generated using WRPLT from Lakes Environmental (\url{https://weblakes.com/products/wrplot/index.html}).
+where $C(ppb)$ is the gas concentration in $ppb$, $C(\mu g/m^{3})$ is the concentration in $\mu g/m^{3}$, $R$ is the ideal gas constant given as 8.3144 $m^{3}kPa K^{-1}mol^{-1}$, $MW$  is the molecular weight of the gas in $g/mole$ (48.01 $g/mole$ for O$_{3}$), $T$ is the ambient temperature in degrees Kelvin, and $P$ is the atmospheric pressure at ground level in $kPa$. The station receives a prevailing wind from the northwest throughout the year as shown in the windrose in Figure \ref{fig:windrose} generated using WRPLT from Lakes Environmental (\url{https://weblakes.com/products/wrplot/index.html}).
 %
 \begin{figure}[H]
 \centering
@@ -344,7 +344,7 @@ x_{scaled} = \frac{x_{i} - x_{min}}{x_{max} - x_{min}}
 \end{equation}
 %
 \noindent
-where $x_{max}$ and $x_{min}$ are the maximum and minimum values in the data set respectively. It can be argued that this method also suffers from legacy biasing like PCA in that the system retains $x_{max}$ and $x_{min}$ in order to restore transformed data to original scale, similar to a key for encryption decoding. If new data is included that exceeds the $x_{max}$ / $x_{min}$ values, the data needs to be reprocessed using the new points. Since we are already working with an historical data set and not using real-time data, there is no need to incorporate this issue. However, even if we were using real-time data, we could safely assume that any value measured that exceeded $x_{max}$ in our historical set was also an extreme point and could be accounted for in the model as a value $>1$. 
+where $x_{max}$ and $x_{min}$ are the maximum and minimum values in the dataset respectively. It can be argued that this method also suffers from legacy biasing like PCA in that the system retains $x_{max}$ and $x_{min}$ in order to restore transformed data to original scale, similar to a key for encryption decoding. If new data is included that exceeds the $x_{max}$ / $x_{min}$ values, the data needs to be reprocessed using the new points. Since we are already working with an historical data set and not using real-time data, there is no need to incorporate this issue. However, even if we were using real-time data, we could safely assume that any value measured that exceeded $x_{max}$ in our historical set was also an extreme point and could be accounted for in the model as a value $>1$. 
 
 Eighty percent (80\%) of the scaled data was divided into a training set with 20\% reserved for testing.  In larger data sets, a percentage of the total data is often reserved to allow parameter optimization before training in order to reduce time and system resources. Additionally, for FFNNs, training often takes hundreds or thousands of epochs, where an epoch is a complete training cycle that uses all training sets. With our relatively small data set and fast training using the LSTM, reviewing system performance using the full training set did not take much time and therefore did not require reserving a subset.
 
@@ -364,7 +364,7 @@ It is interesting to note in Figure \ref{fig:importance} that the two NOx compon
 The RNN output was trained to predict the 8 hr moving average of measured 1 hr O$_{3}$. To predict future values, the calculated values were shifted in time based on the desired horizon so that input observations $X(t=0)$ was trained on $Y(t=12)$ if the prediction horizon was 12 hours. Output data was generated from 8 hr moving averaged O$_{3}$ calculated from measured 1 hr O$_{3}$ concentrations at each station. The first seven hours of both the input and output training data set was then discarded. 
 
 \subsection{Tensor preparation for RNN input data}
-Data sets provided to the RNN were converted into 3 dimensional tensors based on the sample size of data. The sample size was based on the number of look-back elements within the RNN, as compared to an observation which represented one row of the original data set, $X$.  The transformation of the original 2 dimensional data set $X$ is illustrated in Figure \ref{fig:tensor-tables} using Python notations. Assuming $X$ is a data set of input data (for training or testing the RNN) with $n$ observations and $p$ variables, the total number of elements is the product of $n$ and $p$, or 20 elements for the 5 x 4 data set in the figure. A tensor ($T$) is created with dimension ($s, l, p$) where s = \# of samples given as $n - l$. The total number of elements within $T$ is $s*l*p$. In the example of Figure \ref{fig:tensor-tables}, the dimensions of $T$ are $s = 5 - 2 = 3$, $l = 2$, and $p = 4$.    
+Data sets provided to the RNN were converted into 3 dimensional tensors based on the sample size of data. The sample size was based on the number of look-back elements within the RNN, as compared to an observation which represented one row of the original data set, $X$.  The transformation of the original 2 dimensional data set $X$ is illustrated in Figure \ref{fig:tensor-tables} using Python notations. Assuming $X$ is a data set of input data (for training or testing the RNN) with $n$ observations and $p$ variables, the total number of elements is the product of $n$ and $p$, or 20 elements for the 5 x 4 data set in the figure. A tensor ($T$) is created with dimension ($s, l, p$) where $l$ is the number of look-back time steps, $s$ is the \# of samples in the batch, given as $n - l$. The total number of elements within $T$ is $s*l*p$. In the example of Figure \ref{fig:tensor-tables}, the dimensions of $T$ are $s = 5 - 2 = 3$, $l = 2$, and $p = 4$.    
 %
 \begin{figure}[H]
 \centering

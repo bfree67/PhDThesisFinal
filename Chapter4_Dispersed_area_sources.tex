@@ -15,7 +15,8 @@ The basic $nargyla$ water pipe, as shown in Figure \ref{figng1:pipe} consists of
 
 %
 \begin{figure}[H]
-\includegraphics[width=\linewidth,keepaspectratio]{images/ng1.png} 
+\centering
+\includegraphics[width=0.7\columnwidth, keepaspectratio]{images/ng1.png} 
 \caption{$Nargyla$ pipe with labeled components.}
 \label{figng1:pipe}
 \end{figure}
@@ -119,7 +120,7 @@ Q_{i} = EF_{i} * AC_{X}
 \end{equation}
 %
 \noindent
-where $Q$ is the emissions of pollutant $i$, $EF$ is the individual emission factor for the pollutant resulting from process $X$, and $AC$ is the amount of input feedstock used by process $X$ over the reporting period.  In this case, there is only one process and the reporting period is one year.  With the $EF$’s for each chemical in Table \ref{tb2:emissionfactors} given in grams of emissions per kilogram of material consumed, the value for AC in this process is measured in total kilograms of material consumed in combustion and calculated as
+where $Q_{i}$ is the emissions of pollutant $i$, $EF$ is the individual emission factor for the pollutant resulting from process $X$, and $AC$ is the amount of input feedstock used by process $X$ over the reporting period.  In this case, there is only one process and the reporting period is one year.  With the $EF$’s for each chemical in Table \ref{tb2:emissionfactors} given in grams of emissions per kilogram of material consumed, the value for AC in this process is measured in total kilograms of material consumed in combustion and calculated as
 %
 \begin{equation}
 \label{eq2}
@@ -147,7 +148,7 @@ and
 \noindent
 where $N$ is the number of samples (in this case the number of caf\'es and restaurants), $\mu$ is the sample mean, $\sigma$ is the sample standard deviation, $\mu_{CLT}$ is the CLT mean, and $\sigma_{CLT}$ is the CLT standard deviation \citep{Ott1981}. 
 
-The number of establishments serving $nargyla$ can be assumed to be constant with a few new shops opening or old shops closing.  This work sampled caf\'es and restaurants and included well-known shops to assure a better representation of the total population of $sheesha$ establishments.   Most of the caf\'es and restaurants that serve $nargyla$ in Kuwait are located in the Salmiya and Hawalli areas, with other concentrations in Jeleeb Al Shuyoukh, Abu Fatira, Fahaheel, and Jahra.  Most hotels also have a caf\'e that serves $nargyla$, as well as food malls such as the Arbilla in Al-Bidda.  Figure \ref{figng2:cafes} shows clusters of caf\'es in general geographic areas.  For this study, 86 establishments are included that are assumed to use the same average amount on an annual basis.  Table \ref{tb3:feedstock} shows the calculated annual averages and standard deviations of charcoal and $sheesha$ utilization as well as the total consumed amount per Equation \ref{eq2} for an individual establishment.  For modeling purposes, mean annual consumption and standard deviation were calculated by multiplying the weekly averages by 52 weeks and applying the CLT factors from Equations \ref{eq3} and \ref{eq4} as shown in Equations \ref{eq5} and \ref{eq6} respectively.  The values of $N$ in Equations \ref{eq5} and \ref{eq6}4 represent the active establishments used in the study.  In this case, $N$ = 86.
+The number of establishments serving $nargyla$ can be assumed to be constant with a few new shops opening or old shops closing.  This work sampled caf\'es and restaurants and included well known shops to assure a better representation of the total population of $sheesha$ establishments.   Most of the caf\'es and restaurants that serve $nargyla$ in Kuwait are located in the Salmiya and Hawalli areas, with other concentrations in Jeleeb Al Shuyoukh, Abu Fatira, Fahaheel, and Jahra.  Most hotels also have a caf\'e that serves $nargyla$, as well as food malls such as the Arbilla in Al-Bidda.  Figure \ref{figng2:cafes} shows clusters of caf\'es in general geographic areas.  For this study, 86 establishments are included that are assumed to use the same average amount on an annual basis.  Table \ref{tb3:feedstock} shows the calculated annual averages and standard deviations of charcoal and $sheesha$ utilization as well as the total consumed amount per Equation \ref{eq2} for an individual establishment.  For modeling purposes, mean annual consumption and standard deviation were calculated by multiplying the weekly averages by 52 weeks and applying the CLT factors from Equations \ref{eq3} and \ref{eq4} as shown in Equations \ref{eq5} and \ref{eq6} respectively.  The values of $N$ in Equations \ref{eq5} and \ref{eq6}4 represent the active establishments used in the study.  In this case, $N$ = 86.
 %
 \begin{equation}
 \label{eq5}
@@ -196,6 +197,7 @@ This study did not include $nargyla$ usage at home nor did it include charcoal c
 
 %
 \begin{figure}[H]
+\centering
 \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/ng2.png} 
 \caption{Location clusters of caf\'es with $nargyla$.}
 \label{figng2:cafes}
@@ -230,7 +232,7 @@ Results were divided by 106 to get units of metric tonnes, or 103 to get kilogra
      
 %
 \begin{figure}
-%\includegraphics[width=\linewidth,height=22.1cm,keepaspectratio]{images/ng3.png}
+\centering
 \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/ng3.png}  
 \caption[Results of Emission Factor PDFs and Annual Emissions]{Results of Emission Factor PDFs and Annual Emissions based on Triangle distributions of Emission Factors.}
 \label{figng3:pdfs}
@@ -311,7 +313,7 @@ A similar review of the standard deviations of the different distributions shows
 } %end resize
 \end{table}
 
-While the form of the EF distribution influences annual emission distributions, the influence is not significant. Ninety-five percent (95\%) Confidence Intervals (CI) of the distribution means are shown in Tables \ref{tb6:compare}, with similar CI’s for the sample standard deviations in Table \ref{tb7:stndev}. In all case, the distribution statistics are within the bounds and therefore can accept a null hypothesis that distribution means are not significantly different and that distribution variances are not statistically significant ($p<0.05$).  Tables \ref{tb6:compare} and \ref{tb7:stndev} show that using a Triangular distribution provides a conservative value if the underlying distribution is not known and few data points are available to describe the sample population.  
+While the form of the EF distribution influences annual emission distributions, the influence is not significant. Ninety five percent (95\%) Confidence Intervals (CI) of the distribution means are shown in Tables \ref{tb6:compare}, with similar CI’s for the sample standard deviations in Table \ref{tb7:stndev}. In all case, the distribution statistics are within the bounds and therefore can accept a null hypothesis that distribution means are not significantly different and that distribution variances are not statistically significant ($p<0.05$).  Tables \ref{tb6:compare} and \ref{tb7:stndev} show that using a Triangular distribution provides a conservative value if the underlying distribution is not known and few data points are available to describe the sample population.  
 
 \subsection{Comparison of annual results to national emissions inventory}
 Applying the resulting means generated from the assigned PDFs we can compare the estimated emissions from smoking $nargyla$ to the total emissions reported by Kuwait in its first national communication under the United Nations Framework Convention on Climate Change (UNFCCC) \citep{AlMudhhi2012}.  The report baselines Kuwait’s Greenhouse Gas (GHG) emissions for 1996 baseline year.  Table \ref{tb8:comparison} shows that the estimated emissions from smoking in 2016 are significant compared to the entire reported emissions of 1996. 

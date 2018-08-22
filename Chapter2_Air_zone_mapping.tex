@@ -2,7 +2,7 @@
 
 \section{Introduction}
 
-The use of air quality zones (AQZs) as a tool for air management was identified as early as the 1960s \citep{Breivogel1961, Holland1960} and was first mandated in State Implementation Plans (SIPs) under the US Clean Air Act (CAA) of 1990 (USEPA, 1990). In the United States, AQZs are based on designated air quality control regions (AQCRs) that include defined municipalities and groups of intrastate and interstate counties \citep{USEPA1970a}. Currently, there are 264 designated AQCRs with 121 in some form of non-compliance (or non-attainment) with the NAAQS (USEPA, 2016). In general, AQZs describe areas where air pollutants are below ambient standards (``in attainment" or ``in compliance"), or exceeding them (``in non-attainment" or ``in non-compliance").  The United States Environmental Protection Agency (USEPA) uses ambient air monitoring data from state regulatory agencies measured in each county to determine non-attainment areas \citep{Carr2012}.  The USEPA initially required states to identify zones of non-attainment for 8-hour ozone.  These regulatory requirements later included SO$_{2}$, PM$_{10}$, and PM$_{2.5}$.  A consequence of these regulations was the installation of thousands of monitoring stations throughout the USA.  In 2014, 1,293 active ozone monitoring stations were operating in areas considered to be at risk (USEPA, 2015).  Despite the widespread placement of monitoring equipment, designation of AQZs (or AQCRs) are limited to areas defined by county lines \citep{Carr2012}.
+The use of air quality zones (AQZs) as a tool for air management was identified as early as the 1960s \citep{Breivogel1961, Holland1960} and was first mandated in State Implementation Plans (SIPs) under the US Clean Air Act (CAA) of 1990 (USEPA, 1990). In the United States, AQZs are based on designated air quality control regions (AQCRs) that include defined municipalities and groups of intrastate and interstate counties \citep{USEPA1970a}. Currently, there are 264 designated AQCRs with 121 in some form of non-compliance (or non-attainment) with the NAAQS (USEPA, 2016). In general, AQZs describe areas where air pollutants are below ambient standards (``in attainment" or ``in compliance"), or exceeding them (``in non-attainment" or ``in non-compliance").  The United States Environmental Protection Agency (USEPA) uses ambient air monitoring data from state regulatory agencies measured in each county to determine non-attainment areas \citep{Carr2012}.  The USEPA initially required states to identify zones of non-attainment for 8 hr ozone.  These regulatory requirements later included SO$_{2}$, PM$_{10}$, and PM$_{2.5}$.  A consequence of these regulations was the installation of thousands of monitoring stations throughout the USA.  In 2014, 1,293 active ozone monitoring stations were operating in areas considered to be at risk (USEPA, 2015).  Despite the widespread placement of monitoring equipment, designation of AQZs (or AQCRs) are limited to areas defined by county lines \citep{Carr2012}.
 
 The European Union initiated a zone management system for its member states in 2008 with Directive 2008/50/EC (EC, 2008).  In addition to designated AQZs, the directive requires at least one monitor for PM$_{2.5}$ in every 100,000 km$^{2}$.  Low emission zones (LEZs) were established in over 200 European cities that enforced restrictions on cars and heavy-duty vehicles (Holman et al., 2015).  The drawback of LEZs is that the zones were established based on city boundaries and not by geophysical features \citep{Henschel2013}.
 
@@ -42,10 +42,11 @@ where $x$ is an individual data point, $\bar{x}$ is the data mean, $\sigma$ is t
 K = \frac{N(N+1)}{(N-1)(N-2)(N-3)} \frac{\sum_{i=1}^{N}\left (x_{i}-\bar{x} \right )^{4}}{\sigma^{4}}
 \end{equation}
 
-The first term, $(N(N+1))/((N-1)(N-2)(N-3))$, is approximately 1/N for large values of N (N$>$200), thus reducing eq \ref{eq:xskurtosis} to eq \ref{eq:kurtosis} \citep{Cox2010}.  Differences between distributions with various $S$ and $K$ values are shown below in Figure \ref{fig:SKcurves}.  The blue, solid line curve shows a Normal distribution with $S$ = 0 and $K$ = 3. The green dot-dash line shows a Weibull distribution with $S$ = 1.7 and $K$ = 7.4.  The red dash line shows a log-Normal distribution with $S$ = 4 and $K$ = 41. 
+The first term, $(N(N+1))/((N-1)(N-2)(N-3))$, is approximately 1/N for large values of N (N$>$200), thus reducing eq \ref{eq:xskurtosis} to eq \ref{eq:kurtosis} \citep{Cox2010}.  Differences between distributions with various $S$ and $K$ values are shown below in Figure \ref{fig:SKcurves}.  The blue, solid line curve shows a Normal distribution with $S$ = 0 and $K$ = 3. The green dot-dash line shows a Weibull distribution with $S$ = 1.7 and $K$ = 7.4.  The red dash line shows a Lognormal distribution with $S$ = 4 and $K$ = 41. 
 %
 \begin{figure}[H]
-\includegraphics[width=\linewidth,keepaspectratio]{images/aqz1.png} 
+\centering
+\includegraphics[width=0.7\columnwidth,keepaspectratio]{images/aqz1.png} 
 \caption{Distributions representing various $S$ and $K$ statistics.}
 \label{fig:SKcurves}
 \end{figure}
@@ -73,6 +74,7 @@ LSBs are the primary dispersal agent of generated emissions for sources located 
 
 %
 \begin{figure}[H]
+\centering
 \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/aqz2.png} 
 \caption[Typical LSB winds for Kuwait]{(a) Typical day time and (b) night time ground level LSB winds in southern Kuwait for the year 2011.}
 \label{fig:LSBwinds}
@@ -113,7 +115,7 @@ MM5 is a limited-area, non-hydrostatic, terrain-following sigma-coordinate model
 
 \subsection{Air dispersion model results and histograms}
 
-Virtual sources were placed at key areas to represent different risk areas within Kuwait (see Figure \ref{fig:Kuwait}).  The selected sites include industrial and urban areas as well as oil production and remote desert areas. These sites are distributed among the main industrial and living areas to reflect the main land uses in Kuwait- mainly industrial, residential, oil production and open desert.  The sites are listed in Table \ref{tb:virtualsites} and shown in Figure \ref{fig:virtual-locations}. A partial 10 km coastal buffer is also shown in Figure \ref{fig:virtual-locations} that incorporates two major roads running north/south (40 Highway) and east/west (6th Ring Road).
+Virtual sources were placed at key areas to represent different risk areas within Kuwait (see Figure \ref{fig:Kuwait}).  The selected sites include industrial and urban areas as well as oil production and remote desert areas. These sites are distributed among the main industrial and living areas to reflect the main land uses in Kuwait, mainly industrial, residential, oil production and open desert.  The sites are listed in Table \ref{tb:virtualsites} and shown in Figure \ref{fig:virtual-locations}. A partial 10 km coastal buffer is also shown in Figure \ref{fig:virtual-locations} that incorporates two major roads running north/south (40 Highway) and east/west (6th Ring Road).
 %
 \begin{table}[H]
 \centering
@@ -140,6 +142,7 @@ Subhan                   & 48.0064$^{o}$      & 29.2113$^{o}$     & Dense heavy 
 %
 %
 \begin{figure}[H]
+\centering
 \includegraphics[width=\linewidth,keepaspectratio]{images/aqz4.png} 
 \caption[Location of virtual sources]{Location of virtual sources for air dispersion analysis shown with partial 10 km buffer and main perimeter roads.}
 \label{fig:virtual-locations}
@@ -149,6 +152,7 @@ Subhan                   & 48.0064$^{o}$      & 29.2113$^{o}$     & Dense heavy 
 Figure \ref{fig:virtual-dispersions} displays examples of individual ground level concentration outputs from the virtual SO$_{2}$ sources described in Table \ref{tb:puffmodel}. Concentration color gradients were plotted on the same scale for comparison purposes.  
 %
 \begin{figure}[H]
+\centering
 \includegraphics[width=\linewidth,keepaspectratio]{images/aqz5.png} 
 \caption[Ground level air dispersion patterns]{Ground level air dispersion patterns from Inland and Coastal virtual SO$_{2}$ sources averaged over 8,760 hours (annual); (a) Jahra Inland dispersion (Inland) - Year 2010; (b) Kuwait City dispersion (Coastal) - Year 2009}
 \label{fig:virtual-dispersions}
@@ -157,6 +161,7 @@ Figure \ref{fig:virtual-dispersions} displays examples of individual ground leve
 Distributions for inland runs tended to have a more Normal distribution of measurements, compared to coastal results that were shifted more to the left as shown in Figure \ref{fig:virtual-histogram}.
 %
 \begin{figure}[H]
+\centering
 \includegraphics[width=\linewidth,keepaspectratio]{images/aqz6.png} 
 \caption[Histograms of ground level concentrations]{Histograms of ground level concentrations from Inland and Coastal virtual SO$_{2}$ sources averaged over 8,760 hours (annual); (a) Jahra Inland histogram (Inland) - Year 2010; (b) Kuwait City histogram (Coastal) - Year 2009.}
 \label{fig:virtual-histogram}
@@ -214,6 +219,7 @@ Subhan & Coastal & 2009 & 2.8 & 12.06 & 9.3 \\
 %
 %
 \begin{figure}[H]
+\centering
 \includegraphics[width=\linewidth,keepaspectratio]{images/aqz7.png} 
 \caption{$S-K$ plot of virtual sources in Kuwait.}
 \label{fig:SKplotKuwait}
@@ -226,6 +232,7 @@ To confirm the procedure, random points were modeled in the nearby State of Qata
 
 %
 \begin{figure}[H]
+\centering
 \includegraphics[width=\linewidth,keepaspectratio]{images/aqz8.png} 
 \caption{Location of Qatar virtual sites in relation to Kuwait.}
 \label{fig:qatarlocs}
@@ -236,6 +243,7 @@ The methodology properly classified each location as inland and coastal.  The $S
 
 %
 \begin{figure}[H]
+\centering
 \includegraphics[width=\linewidth,keepaspectratio]{images/aqz9.png} 
 \caption{$S-K$ plot of virtual sources in Qatar.}
 \label{fig:SKplotQatar}
@@ -246,6 +254,7 @@ Figure \ref{fig:flowchart} shows a flowchart which summarizes the process to dev
 
 %
 \begin{figure}[H]
+\centering
 \includegraphics[width=\linewidth,keepaspectratio]{images/aqz10.png} 
 \caption{Coastal/Inland determination process flow chart.}
 \label{fig:flowchart}
@@ -260,6 +269,7 @@ After coastal effect limits were estimated using the $S-K$ method, zones were fu
 
 %
 \begin{figure}[H]
+\centering
 \includegraphics[width=\linewidth,keepaspectratio]{images/aqz11.png} 
 \caption{Kuwait Air Quality Zones.}
 \label{fig:kuwaitzones}
@@ -312,6 +322,7 @@ Another common option for prognostic weather data is the Weather research and fo
       
 %
 \begin{figure}[H]
+\centering
 \includegraphics[width=\linewidth,keepaspectratio]{images/aqz12.png} 
 \caption[Comparison of wind patterns using prognostic data]{Comparison of wind patterns using MM5 and WRF prognostic data.}
 \label{fig:12windcompare}
@@ -320,11 +331,12 @@ Another common option for prognostic weather data is the Weather research and fo
 
 \subsubsection{Classification by SVM}
 
-SVMs are a class of supervised learning based models that classify input data sets by mapping into high-dimensional feature spaces. While SVMs have been used since 1995 \citep{Cortes1995}, they have only relatively recently been applied to air pollution concentration predictions \citep{Lu2005, Luna2014, Moazami2016}. A full description of the SVM is beyond the scope of this research but several excellent references and online tutorials are available. A linear SVM was trained with the data set in Table \ref{tb:skewdist} using the Classification Learner module in Matlab 2015a (www.mathworks.com) with a linear kernel function \citep{Yang2011}. The software standardized the input data prior to training. Inland classification was converted to a -1 while coastal classification was designated with a 1. The SVM was initially trained only with $S$ and $K$ results. The resulting confusion matrix could achieve an overall accuracy of 87.9\% - comparable to the results of graphing the $S$ and $K$ values.  
+SVMs are a class of supervised learning based models that classify input data sets by mapping into high-dimensional feature spaces. While SVMs have been used since 1995 \citep{Cortes1995}, they have only relatively recently been applied to air pollution concentration predictions \citep{Lu2005, Luna2014, Moazami2016}. A full description of the SVM is beyond the scope of this research but several excellent references and online tutorials are available. A linear SVM was trained with the data set in Table \ref{tb:skewdist} using the Classification Learner module in Matlab 2015a (www.mathworks.com) with a linear kernel function \citep{Yang2011}. The software standardized the input data prior to training. Inland classification was converted to a -1 while coastal classification was designated with a 1. The SVM was initially trained only with $S$ and $K$ results. The resulting confusion matrix could achieve an overall accuracy of 87.9\%, comparable to the results of graphing the $S$ and $K$ values.  
 
 %
 \begin{figure}[H]
-\includegraphics[width=\linewidth,keepaspectratio]{images/aqz13.png} 
+\centering
+\includegraphics[width=0.7\columnwidth, keepaspectratio]{images/aqz13.png} 
 \caption{Confusion matrix of trained SVM with $S$ and $K$ inputs.}
 \label{fig:13confusionSK}
 \end{figure}
@@ -334,7 +346,8 @@ The use of the SVM allows additional features to be included so that multiple in
 
 %
 \begin{figure}[H]
-\includegraphics[width=\linewidth,keepaspectratio]{images/aqz14.png} 
+\centering
+\includegraphics[width=0.7\columnwidth, keepaspectratio]{images/aqz14.png} 
 \caption{Confusion matrix of trained SVM with S, K and distance to coast inputs.}
 \label{fig:14confusionSKdist}
 \end{figure}
@@ -350,6 +363,7 @@ Annual mean and standard deviations for NO$_{2}$ (measured in 10$^{15}$ molecule
 
 %
 \begin{figure}[H]
+\centering
 \includegraphics[width=\linewidth,keepaspectratio]{images/aqz15.png} 
 \caption{Annual mean concentration of NO$_{2}$ in Kuwait for 2011.}
 \label{fig:15meanNO2}
@@ -357,6 +371,7 @@ Annual mean and standard deviations for NO$_{2}$ (measured in 10$^{15}$ molecule
 %
 %
 \begin{figure}[H]
+\centering
 \includegraphics[width=\linewidth,keepaspectratio]{images/aqz16.png} 
 \caption[Annual Standard Deviation of NO$_{2}$ Concentration]{Annual Standard Deviation of NO$_{2}$ Concentration as percentage of annual concentration in Kuwait for 2011.}
 \label{fig:16stdNO2}
