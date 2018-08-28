@@ -443,7 +443,8 @@ by\par
 {\large \abstractname \par}  %% removed \bfseries (BF)
 %\bfseries \abstractname \par
 \end{center} 
-%\addcontentsline{toc}{chapter}{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+\pagestyle{empty}
 }
 \def\endabstract{\par\vfill\null\end{alwayssingle} }
 
